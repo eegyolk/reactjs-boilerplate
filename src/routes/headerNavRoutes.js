@@ -1,24 +1,15 @@
 import HeaderNav from '../Components/HeaderNav';
-import Home from '../Pages/Home';
-import About from '../Pages/About';
-import Portfolio from '../Pages/Portfolio';
 
-const defaultRoutes = [
+import homeRoute from '../Pages/Home/route';
+import aboutRoute from '../Pages/About/route';
+import portfolioRoute from '../Pages/Portfolio/route';
+
+const headerNavRoutes = [
   {
     path: '/',
     element: <HeaderNav />,
-    children: [
-      { index: true, element: <Home /> },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/Portfolio',
-        element: <Portfolio />,
-      },
-    ],
+    children: [homeRoute, aboutRoute, portfolioRoute],
   },
 ];
 
-export default defaultRoutes;
+export default headerNavRoutes;
