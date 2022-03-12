@@ -1,0 +1,10 @@
+.HeaderNav-ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.HeaderNav-li {
+  margin: 0.1rem;
+  padding: 0.1rem;
+  float: left;
+}
