@@ -1,5 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import counterReducer from './reducers/counterReducer';
 import userReducer from './reducers/userReducer';
 import { watcherSaga } from './sagas/rootSaga';
@@ -13,7 +14,9 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
-const store = createStore(reducers, {}, applyMiddleware(...middlewares));
+const enhancers = composeWithDevTools(applyMiddleware(...middlewares));
+
+const store = createStore(reducers, {}, enhancers);
 
 sagaMiddleware.run(watcherSaga);
 
