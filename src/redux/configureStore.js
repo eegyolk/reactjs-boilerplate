@@ -1,13 +1,13 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import counterReducer from './reducers/counterReducer';
-import userReducer from './reducers/userReducer';
-import { watcherSaga } from './sagas/rootSaga';
+import aboutReducer from '../Pages/About/reducer/about';
+import portfolioReducer from '../Pages/Portfolio/reducer/portfolio';
+import { watcherSaga } from './rootSaga';
 
 const reducers = combineReducers({
-  counter: counterReducer,
-  user: userReducer,
+  about: aboutReducer,
+  portfolio: portfolioReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

@@ -1,7 +1,7 @@
-import { SET_USER } from './userActionTypes';
+import { SET_USER } from './actionTypes';
 
 const initialState = {
-  post: undefined,
+  user: undefined,
 };
 
 const reducer = (state = initialState, action) => {

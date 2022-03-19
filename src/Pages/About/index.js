@@ -1,8 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  incrementCount,
-  decrementCount,
-} from '../../redux/reducers/counterActionTypes';
+import { incrementCount, decrementCount } from './reducer/actionTypes';
 import './style.css';
 
 function About() {
@@ -16,7 +13,7 @@ function About() {
     dispatch(decrementCount());
   };
 
-  const count = useSelector((state) => state.counter.count);
+  const count = useSelector((state) => state.about.count);
 
   return (
     <div className="About">

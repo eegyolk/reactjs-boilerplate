@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser } from '../../redux/reducers/userActionTypes';
+import { getUser } from './reducer/actionTypes';
 import './style.css';
 
 function Portfolio() {
@@ -9,7 +9,7 @@ function Portfolio() {
     dispatch(getUser());
   };
 
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.portfolio.user);
 
   return (
     <div className="Portfolio">
